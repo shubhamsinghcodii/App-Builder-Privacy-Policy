@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f3f7f5">
+  <title>Privacy Policy — App Builder</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --page: #f3f7f5;
+      --surface: rgba(255, 255, 255, 0.92);
+      --surface-strong: #ffffff;
+      --text: #17231e;
+      --muted: #68766f;
+      --accent: #087f5b;
+      --accent-soft: #e6f5ee;
+      --border: #e1eae5;
+      --shadow: 0 18px 55px rgba(25, 55, 40, 0.07);
+      --shadow-soft: 0 8px 24px rgba(25, 55, 40, 0.045);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page: #0b1110;
+        --surface: rgba(20, 29, 26, 0.94);
+        --surface-strong: #151e1a;
+        --text: #edf5f0;
+        --muted: #a1b0a8;
+        --accent: #55d6a4;
+        --accent-soft: #17382c;
+        --border: #293831;
+        --shadow: 0 18px 55px rgba(0, 0, 0, 0.24);
+        --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.16);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(ellipse at 50% -15%, rgba(8, 127, 91, 0.11), transparent 43%),
+        var(--page);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-size-adjust: 100%;
+    }
+
+    .wrap {
+      width: min(100% - 36px, 820px);
+      margin: 0 auto;
+      padding: 64px 0 76px;
+    }
+
+    .page-header {
+      position: relative;
+      overflow: hidden;
+      padding: 34px 36px 30px;
+      margin-bottom: 22px;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--accent);
+      border-radius: 24px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .page-header::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 220px;
+      height: 220px;
+      top: -125px;
+      right: -70px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      opacity: 0.9;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 42px);
+      font-weight: 760;
+      letter-spacing: -0.045em;
+      line-height: 1.12;
+    }
+
+    .sub {
+      margin: 13px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 550;
+      letter-spacing: 0.015em;
+    }
+
+    .intro-card {
+      position: relative;
+      padding: 22px 25px;
+      margin: 0 0 18px;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 17px;
+      background: var(--surface);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .intro-card p { margin: 0; }
+
+    .policy-section {
+      padding: 22px 25px 21px;
+      margin-top: 13px;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: var(--surface);
+      box-shadow: var(--shadow-soft);
+      transition: border-color 160ms ease, transform 160ms ease;
+    }
+
+    .policy-section h2 {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 0 0 10px;
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 750;
+      letter-spacing: -0.015em;
+      line-height: 1.45;
+    }
+
+    .policy-section p,
+    .policy-section ul {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .policy-section p + p { margin-top: 10px; }
+
+    p, li {
+      color: var(--text);
+      font-size: 14.5px;
+    }
+
+    ul {
+      padding-left: 21px;
+      margin: 7px 0 0;
+    }
+
+    li { padding-left: 3px; }
+    li + li { margin-top: 8px; }
+    li::marker { color: var(--accent); }
+
+    .accent {
+      color: var(--accent);
+      font-weight: 750;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 650;
+      text-decoration-color: color-mix(in srgb, var(--accent) 42%, transparent);
+      text-underline-offset: 3px;
+      overflow-wrap: anywhere;
+      transition: text-decoration-color 160ms ease;
+    }
+
+    a:hover { text-decoration-color: currentColor; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
+
+    .muted { color: var(--muted); }
+
+    @media (hover: hover) and (min-width: 700px) {
+      .policy-section:hover {
+        border-color: color-mix(in srgb, var(--accent) 34%, var(--border));
+        transform: translateY(-1px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .wrap {
+        width: min(100% - 28px, 820px);
+        padding: 28px 0 44px;
+      }
+
+      .page-header {
+        padding: 27px 23px 25px;
+        margin-bottom: 14px;
+        border-radius: 20px;
+      }
+
+      .intro-card,
+      .policy-section {
+        padding: 19px 19px;
+        border-radius: 15px;
+      }
+
+      .policy-section { margin-top: 10px; }
+      .policy-section h2 { font-size: 15.5px; }
+      p, li { font-size: 14px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="page-header">
+      <h1>Privacy Policy</h1>
+      <div class="sub">App Builder · Effective 31 October 2026</div>
+    </header>
+
+    <div class="intro-card">
+      <p><span class="accent">App Builder</span> is an on-device, no-code tool that lets you create real Android apps.
+      We designed it to keep your work private: your projects stay on your phone.</p>
+    </div>
+
+    <section class="policy-section">
+      <h2>1. Information we collect</h2>
+      <ul>
+        <li><b>Your app projects</b> (names, taglines, selected features, icons, generated APKs) are stored <b>only on your device</b>. We do not upload them to any server.</li>
+        <li><b>No account is required.</b> We do not ask for your name, email, or phone number to use the app.</li>
+        <li><b>Backups/restores</b> are files you create and control via your device's file picker.</li>
+      </ul>
+    </section>
+
+    <section class="policy-section">
+      <h2>2. Advertising</h2>
+      <p>This app is ad-supported. We use <b>Google AdMob</b> to show ads. AdMob may collect device
+      identifiers (such as the advertising ID) and usage information to serve and measure ads, as described in
+      Google's Privacy Policy. Where required by law (for example in the EEA/UK), we ask for your consent
+      through Google's User Messaging Platform before serving personalised ads.</p>
+      <p class="muted">Google Privacy Policy: https://policies.google.com/privacy</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>3. Generated apps</h2>
+      <p>Apps you create with App Builder are <b>ad-free</b> and run entirely on your device. Their data
+      (items, orders, notes, images) is stored locally in the generated app. Sharing an APK with others is your choice.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>4. Permissions we use</h2>
+      <ul>
+        <li><b>Install unknown apps</b> — only to install the APK you just built on your own request.</li>
+        <li><b>Notifications</b> — only for reminders you explicitly set (on demand).</li>
+        <li><b>Photos/media</b> — only to let you pick an icon or product image; the image stays on your device.</li>
+        <li><b>Internet / network state</b> — to load ads. The builder requires a connection to open.</li>
+      </ul>
+    </section>
+
+    <section class="policy-section">
+      <h2>5. Third parties</h2>
+      <p>The only third-party service used by the builder is <b>Google AdMob</b>. We do not sell your data.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>6. Data retention &amp; deletion</h2>
+      <p>Your data remains on your device until you delete it. You can erase it at any time using
+      <b>Settings → Clear all apps</b> / <b>Erase all data</b>, or by uninstalling the app.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>7. Children</h2>
+      <p>This app is not directed at children under 13 and we do not knowingly collect personal information from children.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>8. Security</h2>
+      <p>Because your projects are stored locally, their security depends on your device. We recommend keeping your device locked and up to date.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>9. Changes</h2>
+      <p>We may update this policy. Changes will appear here with a new effective date.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>10. Contact</h2>
+      <p>Questions about privacy? Email <a href="mailto:support.moonknightstudio@gmail.com">support.moonknightstudio@gmail.com</a>.</p>
+    </section>
+  </main>
+</body>
+</html>
